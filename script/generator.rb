@@ -1,12 +1,15 @@
 require 'csv'
 
+FILENUM=5
+WORDSNUM=13
+
 arr_of_arrs = CSV.read("./words.csv")
-p rand(13)
-for i in 1..5 do
+
+for i in 1..FILENUM do
   fname="../data/sample" + i.to_s + ".txt"
-  File.open(fname, "a") do |f|
+  File.open(fname, "w") do |f|
     for j in 1..10 do
-      f.puts( arr_of_arrs[0][rand(13)])
+      f.puts( arr_of_arrs[0][rand(WORDSNUM)])
     end
   end
 end
