@@ -19,10 +19,11 @@ def search_infile(target,query)
 end
 def search_each(data,query)
   data.each do |line|
-    puts line[0]
+    
     target=line[1].split("\n")
     res=search_infile(target,query)
     count=0
+    puts line[0]
     for i in 0..(res.length-1) do
       if res[i]==true then
         puts "L#{i+1}: #{target[i]}"
